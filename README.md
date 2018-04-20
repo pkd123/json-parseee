@@ -16,7 +16,6 @@ def get(op):
 		return '='
 
 
-
 def parse(jsn_obj):
 	lhs = jsn_obj["lhs"]
 	rhs = jsn_obj["rhs"]
@@ -26,9 +25,6 @@ def parse(jsn_obj):
 	if type(rhs) == type(jsn_obj):
 		rhs = parse(rhs)
 	return  "(" + str(lhs) + " " + get(op) + " " + str(rhs) + ")"
-
-
-
 
 f = open("expression.json","r")
 dom = json.load(f)
